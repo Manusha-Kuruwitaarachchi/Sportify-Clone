@@ -42,7 +42,7 @@ const upsertPriceRecord = async (price: Stripe.Price) =>{
         unit_amount: price.unit_amount ?? undefined,
         interval: price.recurring?.interval,
         interval_count: price.recurring?.interval_count,
-        trail_period_days:price.recurring?.trail_period_days,
+        trial_period_days: price.recurring?.trial_period_days,
         metadata:price.metadata
     };
     const { error }= await supabaseAdmin.from('prices').
